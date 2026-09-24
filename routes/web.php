@@ -6,6 +6,7 @@ use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\AccountController;
 
 Route::get("/", function () {
 
@@ -36,6 +37,11 @@ Route::middleware(['auth'])->group(function () {
         DashboardController::class,
         'index'
     ])->name('dashboard');
+
+    Route::get('/account', [
+        AccountController::class,
+        'index'
+    ])->name('account');
 
 
 

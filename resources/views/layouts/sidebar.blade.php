@@ -59,9 +59,9 @@
     <div class="pt-8 pb-7 flex items-center gap-2" :class="(!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen) ? 'justify-center' : 'justify-between'">
         <a href="/">
             <div class="hidden [.sidebar-expanded_&]:block">
-                <h1 class="text-white">LAP Übung</h1>
+                <h1 class="text-gray-900 dark:text-white">LAP Übung</h1>
             </div>
-            <h1 class="text-white block [.sidebar-expanded_&]:hidden">LAP</h1>
+            <h1 class="text-gray-900 dark:text-white block [.sidebar-expanded_&]:hidden">LAP</h1>
      </a>
     </div>
 
