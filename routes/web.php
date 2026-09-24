@@ -38,14 +38,37 @@ Route::middleware(['auth'])->group(function () {
         'index'
     ])->name('dashboard');
 
-    Route::get('/account', [
-        AccountController::class,
-        'index'
-    ])->name('account');
-
-
-
     Route::get('/signout', [UserController::class, 'logout'])->name('signout');
+
+    // Account-Seite anzeigen
+    Route::get(
+        '/account',
+        [AccountController::class, 'index']
+    )->name('account');
+
+    // Accountdaten speichern
+    Route::patch(
+        '/account',
+        [AccountController::class, 'update']
+    )->name('account.update');
+
+    // Passwort ändern
+    Route::patch(
+        '/account/password',
+        [AccountController::class, 'updatePassword']
+    )->name('account.password.update');
+
+    // Profilbild hochladen
+    Route::post(
+        '/account/image',
+        [AccountController::class, 'updateImage']
+    )->name('account.image.update');
+
+    // Profilbild löschen
+    Route::delete(
+        '/account/image',
+        [AccountController::class, 'deleteImage']
+    )->name('account.image.delete');
 });
 
 Route::middleware(['admin'])->group(function () {

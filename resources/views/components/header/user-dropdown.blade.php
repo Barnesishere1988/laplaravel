@@ -62,11 +62,36 @@
         type="button"
         @click="toggleDropdown()"
     >
-        <span class="mr-3 overflow-hidden rounded-full h-11 w-11 rtl:mr-0 rtl:ml-3">
-            <img src="/images/user/owner.png" alt="User" />
-        </span>
+        @if (auth()->user()->user_image)
 
-        <span class="block mr-1 font-medium text-theme-sm rtl:mr-0 rtl:ml-1">{{ auth()->user()->email }}</span>
+            <img
+                src="{{ asset(
+                    'storage/avatars/' .
+                    auth()->user()->user_image
+                ) }}"
+                alt="Profilbild"
+                class="h-11 w-11 rounded-full object-cover"
+            >
+
+        @else
+
+            <div class="flex h-11 w-11 items-center
+                        justify-center rounded-full
+                        bg-brand-500 text-white">
+
+                {{ strtoupper(
+                    substr(
+                        auth()->user()->fname,
+                        0,
+                        1
+                    )
+                ) }}
+
+            </div>
+
+        @endif
+
+        <span class="block mr-1 font-medium text-theme-sm rtl:mr-0 rtl:ml-1">&nbsp;{{ auth()->user()->email }}</span>
 
         <!-- Chevron Down Icon -->
         <svg
