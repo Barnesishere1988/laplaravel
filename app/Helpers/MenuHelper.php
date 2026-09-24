@@ -10,11 +10,9 @@ class MenuHelper
             [
                 'icon' => 'dashboard',
                 'name' => 'Dashboard',
-                'subItems' => [
-                    ['name' => 'Ecommerce', 'path' => '/'],
-                ],
+                'path' => '/dashboard',
             ],
-            [
+          /*  [
                 'icon' => 'calendar',
                 'name' => 'Calendar',
                 'path' => '/calendar',
@@ -45,14 +43,14 @@ class MenuHelper
                     ['name' => 'Blank Page', 'path' => '/blank', 'pro' => false],
                     ['name' => '404 Error', 'path' => '/error-404', 'pro' => false]
                 ],
-            ],
+            ],*/
         ];
     }
 
     public static function getOthersItems()
     {
         return [
-            [
+            /*[
                 'icon' => 'charts',
                 'name' => 'Charts',
                 'subItems' => [
@@ -79,7 +77,7 @@ class MenuHelper
                     ['name' => 'Sign In', 'path' => '/signin', 'pro' => false],
                     ['name' => 'Sign Up', 'path' => '/signup', 'pro' => false],
                 ],
-            ],
+            ],*/
         ];
     }
 
@@ -90,10 +88,10 @@ class MenuHelper
                 'title' => 'Menu',
                 'items' => self::getMainNavItems()
             ],
-            [
+           /* [
                 'title' => 'Others',
                 'items' => self::getOthersItems()
-            ]
+            ]*/
         ];
     }
 
